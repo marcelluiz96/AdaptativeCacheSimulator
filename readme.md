@@ -1,8 +1,13 @@
-#What is this project?
+# About the project
+
 
 This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're studying this subject, and need more info, please refer to the 'Context' topics.
 
 This project was developed in 2014.
+
+## How do i run this?
+
+This project was developed using Quartus. I'd say the easiest way to import it would be to take the .vhd files you find useful. If you want the whole project structure, just clone the Core folder. Do note there's also 'Modules' folder, in case you need individual functionalities.
 
 ## Useful information
 
@@ -12,11 +17,8 @@ This project was developed in 2014.
 
 - The code was modularized, but lacks documentation. I'm available if you need any part of it for your own project (e-mail provided in the last section).
 
-## How do i run this?
-
-This project was developed using Quartus. I'd say the easiest way to import it would be to take the .vhd files you find useful. If you want the whole project structure, just clone the Core folder. Do note there's also 'Modules' folder, in case you need individual functionalities.
-
 # Context
+
 
 ## What is caching?
 
