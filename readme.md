@@ -3,13 +3,14 @@
 ![simulation waveform](https://cloud.githubusercontent.com/assets/8753560/26434553/c00efb5e-40df-11e7-9eb5-719f3dcd6a1e.PNG "Direct mapping")
 
 
-This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're studying this subject, and need more info, please refer to the 'Context' topics.
+This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're not familiar with the subject, please refer to the 'Context' topic further below.
 
 This project was developed in 2014.
 
-## How do i run this?
+## How to run
 
-This project was developed using Quartus. I'd say the easiest way to import it would be to take the .vhd files you find useful. If you want the whole project structure, just clone the Core folder. Do note there's also 'Modules' folder, in case you need individual functionalities.
+This project was developed using Quartus. I'd say the easiest way to import it would be to take the .vhd files you find useful and add to your own project. 
+If you need the project's structure, just clone the Core folder. Do note there's also 'Modules' folder, in case you need individual functionalities.
 
 ## Useful information
 
