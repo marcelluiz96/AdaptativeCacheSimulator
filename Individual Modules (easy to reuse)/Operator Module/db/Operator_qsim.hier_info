@@ -1,0 +1,45 @@
+|Operator
+clk => Randomizer:R1.clk
+clk => result[0]~reg0.CLK
+clk => result[1]~reg0.CLK
+clk => result[2]~reg0.CLK
+clk => result[3]~reg0.CLK
+clk => Corrige[0].CLK
+clk => Corrige[1].CLK
+clk => Corrige[2].CLK
+clk => Corrige[3].CLK
+Address[0] => Mux3.IN0
+Address[0] => Mux3.IN1
+Address[0] => Mux3.IN2
+Address[1] => Mux2.IN1
+Address[1] => Mux2.IN2
+Address[2] => Mux1.IN2
+Address[3] => Mux0.IN2
+Address[4] => ~NO_FANOUT~
+State_Number[0] => Mux0.IN4
+State_Number[0] => Mux1.IN4
+State_Number[0] => Mux2.IN4
+State_Number[0] => Mux3.IN4
+State_Number[1] => Mux0.IN3
+State_Number[1] => Mux1.IN3
+State_Number[1] => Mux2.IN3
+State_Number[1] => Mux3.IN3
+result[0] <= result[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Operator|randomizer:R1
+clk => rand_temp[0].CLK
+clk => rand_temp[1].CLK
+clk => rand_temp[2].CLK
+clk => rand_temp[3].CLK
+clk => rand_temp[4].CLK
+random_num[0] <= rand_temp[0].DB_MAX_OUTPUT_PORT_TYPE
+random_num[1] <= rand_temp[1].DB_MAX_OUTPUT_PORT_TYPE
+random_num[2] <= rand_temp[2].DB_MAX_OUTPUT_PORT_TYPE
+random_num[3] <= rand_temp[3].DB_MAX_OUTPUT_PORT_TYPE
+random_num[4] <= rand_temp[4].DB_MAX_OUTPUT_PORT_TYPE
+
+

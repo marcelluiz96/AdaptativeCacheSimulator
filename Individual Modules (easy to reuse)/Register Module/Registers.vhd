@@ -1,0 +1,86 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity Registers is
+	port (
+		clk: in std_logic;
+		Address_sel: in std_logic_vector(4 downto 0);
+		reg_out: out std_logic_vector(31 downto 0)
+	);
+end entity;
+
+architecture behavior of Registers is
+	signal reg0: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal reg1: std_logic_vector (31 downto 0) := "00000000000000000000000000000010";		
+	signal reg2: std_logic_vector (31 downto 0) := "00000000000000000000000000000100";		
+	signal reg3: std_logic_vector (31 downto 0) := "00000000000000000000000000001000";		
+	signal reg4: std_logic_vector (31 downto 0) := "00000000000000000000000000010000";		
+	signal reg5: std_logic_vector (31 downto 0) := "00000000000000000000000000100000";		
+	signal reg6: std_logic_vector (31 downto 0) := "00000000000000000000000001000000";		
+	signal reg7: std_logic_vector (31 downto 0) := "00000000000000000000000010000000";		
+	signal reg8: std_logic_vector (31 downto 0) := "00000000000000000000000100000000";		
+	signal reg9: std_logic_vector (31 downto 0) := "00000000000000000000001000000000";
+	signal reg10: std_logic_vector (31 downto 0) := "00000000000000000000010000000000";
+	signal reg11: std_logic_vector (31 downto 0) := "00000000000000000000100000000000";
+	signal reg12: std_logic_vector (31 downto 0) := "00000000000000000001000000000000";
+	signal reg13: std_logic_vector (31 downto 0) := "00000000000000000010000000000000";
+	signal reg14: std_logic_vector (31 downto 0) := "00000000000000000100000000000000";
+	signal reg15: std_logic_vector (31 downto 0) := "00000000000000001000000000000000";	
+	signal reg16: std_logic_vector (31 downto 0) := "00000000000000010000000000000000";
+	signal reg17: std_logic_vector (31 downto 0) := "00000000000000100000000000000000";
+	signal reg18: std_logic_vector (31 downto 0) := "00000000000001000000000000000000";
+	signal reg19: std_logic_vector (31 downto 0) := "00000000000010000000000000000000";
+	signal reg20: std_logic_vector (31 downto 0) := "00000000000100000000000000000000";
+	signal reg21: std_logic_vector (31 downto 0) := "00000000001000000000000000000000";
+	signal reg22: std_logic_vector (31 downto 0) := "00000000010000000000000000000000";
+	signal reg23: std_logic_vector (31 downto 0) := "00000000100000000000000000000000";
+	signal reg24: std_logic_vector (31 downto 0) := "00000001000000000000000000000000";
+	signal reg25: std_logic_vector (31 downto 0) := "00000010000000000000000000000000";
+	signal reg26: std_logic_vector (31 downto 0) := "00000100000000000000000000000000";
+	signal reg27: std_logic_vector (31 downto 0) := "00001000000000000000000000000000";
+	signal reg28: std_logic_vector (31 downto 0) := "00010000000000000000000000000000";
+	signal reg29: std_logic_vector (31 downto 0) := "00100000000000000000000000000000";
+	signal reg30: std_logic_vector (31 downto 0) := "01000000000000000000000000000000";
+	signal reg31: std_logic_vector (31 downto 0) := "10000000000000000000000000000000";	
+begin
+	process(clk)
+	begin
+		if(clk = '1' and clk'event) then
+			case address_sel is
+				when "00000"  => reg_out <= reg0;
+				when "00001"  => reg_out <= reg1;
+				when "00010"  => reg_out <= reg2;
+				when "00011"  => reg_out <= reg3;
+				when "00100"  => reg_out <= reg4;
+				when "00101"  => reg_out <= reg5;
+				when "00110"  => reg_out <= reg6;
+				when "00111"  => reg_out <= reg7;
+				when "01000"  => reg_out <= reg8;
+				when "01001"  => reg_out <= reg9;
+				when "01010"  => reg_out <= reg10;
+				when "01011"  => reg_out <= reg11;
+				when "01100"  => reg_out <= reg12;
+				when "01101"  => reg_out <= reg13;
+				when "01110"  => reg_out <= reg14;
+				when "01111"  => reg_out <= reg15;
+				when "10000"  => reg_out <= reg16;
+				when "10001"  => reg_out <= reg17;
+				when "10010"  => reg_out <= reg18;
+				when "10011"  => reg_out <= reg19;
+				when "10100"  => reg_out <= reg20;
+				when "10101"  => reg_out <= reg21;
+				when "10110"  => reg_out <= reg22;
+				when "10111"  => reg_out <= reg23;
+				when "11000"  => reg_out <= reg24;
+				when "11001"  => reg_out <= reg25;
+				when "11010"  => reg_out <= reg26;
+				when "11011"  => reg_out <= reg27;
+				when "11100"  => reg_out <= reg28;
+				when "11101"  => reg_out <= reg29;
+				when "11110"  => reg_out <= reg30;
+				when others  => reg_out <= reg31;
+			end case;
+		end if;
+	end process;
+end architecture;

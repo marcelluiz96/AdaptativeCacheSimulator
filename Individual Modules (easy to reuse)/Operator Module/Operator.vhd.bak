@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Operator is
+port (
+clk: in std_logic;
+Adress: in std_logic_vector(4 downto 0); -- Posição do Registrador
+State_Number: in std_logic_vector(1 downto 0); -- Estado atual
+result: out std_logic_vector(3 downto 0) -- Posição/Bloco da Cache selecionada
+);
+end entity;
+
+architecture Structural of Operator is
+component Randomizer
+port (
+	clk: in std_logic;
+	random_num: out std_logic_vector(4 downto 0)
+);
+
+signal Random_SR: std_logic_vector(4 downto 0);
+signal Adress_S: std_logic_vector(4 downto 0);
+signal Int: Integer;
+
+begin
+R1: Randomizer port map(clk, Random_SR);
+process(clk)
+begin
+if (clk = '1' and clk'event) then
+Adress_S <= Adress;
+Int <= to_integer(unsigned (Adress) ); --- CHECAR AQUI E TROCAR POR ADRESS_S
+
+
+end if;
+end process;
+end architecture;

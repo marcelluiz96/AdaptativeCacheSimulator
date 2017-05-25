@@ -1,0 +1,7 @@
+
+State Machine - |Main|State
+Name State.Fa State.Bk8 State.Bk4 State.Dm 
+State.Dm 0 0 0 0 
+State.Bk4 0 0 1 1 
+State.Bk8 0 1 0 1 
+State.Fa 1 0 0 1 

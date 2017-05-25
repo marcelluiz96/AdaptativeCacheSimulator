@@ -1,0 +1,54 @@
+library ieee;
+use ieee.std_logic_1164.all;
+--use ieee.std_logic_arith.all;
+--use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity operator is
+port (
+clk: in std_logic;
+adress_sel: in std_logic_vector(4 downto 0); -- Endereço do dado do registrador a ser enviado à cache
+state_number: in std_logic_vector(1 downto 0); -- Número do estado (para decidir a operação a ser realizada)
+result: out std_logic_vector(5 downto 0); -- Posição em que o dado será armazenado na cache
+r_value: out std_logic_vector(4 downto 0) -- DELETAR DPS
+);
+end entity;
+
+architecture behavior of operator is
+---------------------------COMPONENTS DECLARATION --------------------------
+component randomizer
+      generic ( width : integer :=  5 ); 
+port(
+      clk : in std_logic;
+      random_num : out std_logic_vector (width-1 downto 0)   --output vector            
+    );
+end component;
+
+signal random_value: std_logic_vector(4 downto 0);
+signal i: integer;
+signal myAdress_sel: std_logic_vector(4 downto 0);
+-------------------------BEGINNING OF ARCHITECTURE- -----------------------------
+begin
+H1: randomizer port map(clk,random_value);
+process(clk, adress_sel)
+begin
+if (clk = '1' and clk'event) then
+myadress_sel <= adress_sel;
+i <= to_integer(unsigned (myadress_sel) );
+case state_number is
+when "00" =>                          -- Direct Mapping
+result <='0' & std_logic_vector(unsigned(adress_sel) mod 16);  -- "11111"
+when "01" =>								  -- 4-way
+result <='0' & std_logic_vector(unsigned(adress_sel) mod 4); -- "00101"
+when "10" =>								  -- 8-way
+result <='0' & std_logic_vector(unsigned(adress_sel) mod 2); -- "00010"
+when "11" =>								  -- Fully associative
+--i <= to_integer(unsigned(random_value));
+
+r_value <= random_value;
+result <= '0' & std_logic_vector(unsigned(random_value) mod 16);
+
+end case;
+end if;
+end process;
+end architecture;

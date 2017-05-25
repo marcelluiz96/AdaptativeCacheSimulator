@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Registers">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Registers|altsyncram:Ram0_rtl_0" CBX_FILE_NAME="altsyncram_bd71.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,64 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
+entity CacheNumber is
+port (
+clk: in std_logic;
+P_sel: in std_logic_vector(3 downto 0); -- Position selector
+data: in std_logic_vector(31 downto 0);
+--cache_flag: out std_logic
+);
+end entity;
+
+architecture behavior of CacheNumber is
+	------------------COMPONENT---------------------------------------------------------
+	component randomizer 
+		port(
+			clk: in std_logic;
+							
+		);
+	signal cache0: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache1: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache2: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache3: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache4: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache5: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache6: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache7: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache8: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";		
+	signal cache9: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache10: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache11: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache12: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache13: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache14: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+	signal cache15: std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+begin
+process(clk)
+begin
+if(clk = '1' and clk'event) then
+cache_flag <= '1';
+case P_sel is
+when "0000"  =>  cache0 <= data;
+when "0001"  =>  cache1 <= data;
+when "0010"  =>  cache2 <= data;
+when "0011"  =>  cache3 <= data;
+when "0100"  =>  cache4 <= data;
+when "0101"  =>  cache5 <= data;
+when "0110"  =>  cache6 <= data;
+when "0111"  =>  cache7 <= data;
+when "1000"  =>  cache8 <= data;
+when "1001"  =>  cache9 <= data;
+when "1010"  =>  cache10<= data;
+when "1011"  =>  cache11<= data;
+when "1100"  =>  cache12<= data;
+when "1101"  =>  cache13<= data;
+when "1110"  =>  cache14<= data;
+when "1111"  =>  cache15<= data;
+end case;
+
+
+end if;
+end process;
+end architecture;
