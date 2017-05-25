@@ -1,6 +1,7 @@
 # About the project
 
-![Alt text](/Outputs (simulations)/Dm/Simulation Waveform.PNG?raw=true "Altera Quartus simulation")
+![simulation waveform](https://cloud.githubusercontent.com/assets/8753560/26434553/c00efb5e-40df-11e7-9eb5-719f3dcd6a1e.PNG "Direct mapping")
+
 
 This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're studying this subject, and need more info, please refer to the 'Context' topics.
 
