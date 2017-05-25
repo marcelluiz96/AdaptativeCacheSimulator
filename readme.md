@@ -1,15 +1,40 @@
-A pasta Componentes Individuais é importante para interessados em
-reutilizar algum componente ou realizar qualquer alteração neles.
+#What is this project?
 
-A pasta Final Project é a importante para a correção por parte do discente
+This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're studying this subject, and need more info, please refer to the 'Context' topics.
 
-A pasta Simulações contém a simulação de cada estado em .Png
+This project was developed in 2014.
 
+## Useful information
 
-NOTA IMPORTANTE:
-A informação do relatório que associava os arquivos individuais ao projeto
-final para facilitar alterações perdeu o valor de última hora, pois o
-caminho no QUARTUS incluia pastas como C:/Altera/Marcel, logo, não
-funcionaria em outros computadores.
-Por essa razão, alterações nos módulos individuais precisarão ser refeitas
-no projeto final contido na pasta Final Project
+- The cache is made of 16 '32-bits' registers
+
+- This simulates the behavior of 4 types of cache associativity (which are listed a couple of sections below). There isn't, however, an actual CPU implementation. It's mocked. The cake is a lie.
+
+- The code was modularized, but lacks documentation. I'm available if you need any part of it for your own project (e-mail provided in the last section).
+
+## How do i run this?
+
+This project was developed using Quartus. I'd say the easiest way to import it would be to take the .vhd files you find useful. If you want the whole project structure, just clone the Core folder. Do note there's also 'Modules' folder, in case you need individual functionalities.
+
+# Context
+
+## What is caching?
+
+Every processor uses extremely fast memories, named Cache memories, to store copies of highly-used (or recently used) data as close as possible to the CPU itself. It allows for the processor to access it faster when further usage is needed.There may be multiple levels of cache(L1, L2, etc), each being closer to the cores... But that's not what this is about.
+
+Anyway, when data is required by the CPU, it first verifies whether or not it's stored in the cache. There are algorithms used to reserve sectors of the cache for specific candidates in the main memory. This prevents data being stored twice in the cache, for instance.
+
+## What are we doing here, exactly?
+
+We're using a finite-state machine to change the cache's associativity algorithm whenever the miss rate is above a certain treshold. It then runs in the desired algorithm until the memory's scenario becomes awful enough for the miss rate to go over said treshold.
+
+## Associativity algorithms
+
+- Direct Mapping
+- 4-way set associative
+- 8-way set associative
+- Fully associative
+
+# Contact
+
+Feel free to e-mail me at marcelluiz96@hotmail.com (or marcelluiz960@gmail.com)
