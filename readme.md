@@ -1,5 +1,6 @@
 # About the project
 
+![Alt text](/Outputs (simulations)/Dm/Simulation Waveform.PNG?raw=true "Altera Quartus simulation")
 
 This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're studying this subject, and need more info, please refer to the 'Context' topics.
 
