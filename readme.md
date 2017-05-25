@@ -1,11 +1,10 @@
 # About the project
 
-![simulation waveform](https://cloud.githubusercontent.com/assets/8753560/26434553/c00efb5e-40df-11e7-9eb5-719f3dcd6a1e.PNG "Direct mapping")
-
-
 This is a VHDL implementation of an adaptative Performance-aware algorithm for Memory Caching. If you're not familiar with the subject, please refer to the 'Context' topic further below.
 
 This project was developed in 2014.
+
+![simulation waveform](https://cloud.githubusercontent.com/assets/8753560/26434553/c00efb5e-40df-11e7-9eb5-719f3dcd6a1e.PNG "Direct mapping")
 
 ## How to run
 
